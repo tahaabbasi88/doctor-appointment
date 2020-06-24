@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_032623) do
+ActiveRecord::Schema.define(version: 2020_06_24_184510) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "street"
+    t.string "province"
+    t.string "country"
+    t.string "postal_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "doctors", force: :cascade do |t|
     t.string "first_name"
